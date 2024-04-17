@@ -1,5 +1,6 @@
 package ebrahim.hossain.sqa.basedriver;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
@@ -8,13 +9,15 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.WaitUntilState;
 
 public class BaseDriver {
-	public String url = "https://dev-sp2.meet.achievetestprep.com/internal-login";
+	public static String url = "https://staging-sp.dev.prep.achievetestprep.com/internal-login";
 
-	Playwright playwright;
-	BrowserType browserType;
-	protected Browser browser;
-	protected BrowserContext context;
-	protected Page page;
+	public static Playwright playwright;
+	public static BrowserType browserType;
+	public static Browser browser;
+	public static BrowserContext context;
+	public static Page page;
+	
+	protected ExtentTest test;
 
 	public void launchPlaywright(String browserName, String headless) {
 		playwright = Playwright.create();
@@ -35,13 +38,18 @@ public class BaseDriver {
 		System.out.println("**** Project Browser Name and Version is : " + browserName + " : " + browser.version());
 	}
 
-	public void launchApplication(String url) {
+	public void launchApplication() throws InterruptedException {
 		page.navigate(url, new Page.NavigateOptions().setWaitUntil(WaitUntilState.LOAD));
+		Thread.sleep(3000);
 	}
 
 	public void closePlaywright() {
-		page.close();
-		browser.close();
-		playwright.close();
+		try {
+			page.close();
+			browser.close();
+			playwright.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 }

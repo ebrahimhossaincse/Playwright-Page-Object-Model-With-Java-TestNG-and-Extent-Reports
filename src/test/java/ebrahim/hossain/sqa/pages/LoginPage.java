@@ -1,6 +1,9 @@
 package ebrahim.hossain.sqa.pages;
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ebrahim.hossain.sqa.utilities.CommonMethods;
@@ -13,6 +16,15 @@ public class LoginPage extends CommonMethods {
 	private Locator email;
 	private Locator password;
 	private Locator login_button;
+
+	public LoginPage(ExtentTest test, Page page) {
+		this.page = page;
+		this.test = test;
+
+		this.email = page.locator("//input[@name='email']");
+		this.password = page.locator("//input[@name='password']");
+		this.login_button = page.locator("//button[contains(text(),'Login')]");
+	}
 
 	public Locator getEmail() {
 		return email;
@@ -38,13 +50,53 @@ public class LoginPage extends CommonMethods {
 		this.login_button = login_button;
 	}
 
-	public LoginPage(ExtentTest test, Page page) {
-		this.test = test;
-		this.page = page;
-
-		this.email = page.locator("//input[@name='username']");
-		this.password = page.locator("//input[@name='password']");
-		this.login_button = page.locator("//button[@type='submit']");
+	public void handlePass(String message) {
+		test.pass("<p style=\"color:#85BC63; font-size:13px\"><b>" + message + "</b></p>");
 	}
 
+	public void handlePassWithScreenshot(String message, String screenshotName) {
+		test.pass("<p style=\"color:#85BC63; font-size:13px\"><b>" + message + "</b></p>");
+		page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("./screenshots/" + screenshotName + ".png"))
+				.setFullPage(true));
+		String dest = System.getProperty("user.dir") + "/screenshots/" + "" + screenshotName + ".png";
+		test.pass(MediaEntityBuilder.createScreenCaptureFromPath(dest).build());
+	}
+
+	public void handleFail(String message, String screenshotName) {
+		test.fail("<p style=\"color:#FF5353; font-size:13px\"><b>" + message + "</b></p>");
+		Throwable t = new InterruptedException("Exception");
+		test.fail(t);
+		page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("./screenshots/" + screenshotName + ".png"))
+				.setFullPage(true));
+		String dest = System.getProperty("user.dir") + "/screenshots/" + "" + screenshotName + ".png";
+		test.fail(MediaEntityBuilder.createScreenCaptureFromPath(dest).build());
+		closePlaywright();
+	}
+
+	public void login() throws IOException {
+		boolean flag= false;
+		System.out.println(page.title());
+		try {
+			test.info("Login Page");
+			if (email.isVisible() && flag == false) {
+				test.info("Please Enter your email address");
+				email.fill("atp.dev.adm1n02@gmail.com");
+				page.waitForTimeout(1000);
+				handlePass("You have successfully entered your Email");
+				flag = true;
+				if (password.isVisible() && flag == true) {
+					test.info("Please Enter your password");
+					password.fill("@ATP!tester$001");
+					page.waitForTimeout(1000);
+					handlePass("You have successfully entered your Password");
+				} else {
+					handleFail("Password was not locateable. Please check the error message", "password_locator_fail");
+				}
+			} else {
+				handleFail("Email Address was not locateable. Please check the error message.", "email_locator_fail");
+			}
+		} catch (Exception e) {
+			handleFail("An error occurred during login. Please check the error message.", "login_error");
+		}
+	}
 }
