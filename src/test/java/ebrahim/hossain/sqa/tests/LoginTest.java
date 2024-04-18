@@ -19,14 +19,14 @@ public class LoginTest extends BaseDriver {
 	ExtentTest childTest;
 
 	@BeforeClass
-	@Parameters({ "browserName", "headless" })
-	public void openUrl(@Optional("chrome") String browserName, @Optional("false") String headless)
-			throws InterruptedException {
+	@Parameters({ "url", "browserName", "headless" })
+	public void openUrl(@Optional("https://staging-sp.dev.prep.achievetestprep.com/internal-login") String url,
+			@Optional("chrome") String browserName, @Optional("false") String headless) throws InterruptedException {
 		report = ExtentFactory.getInstance();
 		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>SALES PORTAL - ADMIN</b></p>")
 				.assignAuthor("QA TEAM").assignDevice("Windows");
 		launchPlaywright(browserName, headless);
-		launchApplication();
+		launchApplication(url);
 	}
 
 	@Test(priority = 0)

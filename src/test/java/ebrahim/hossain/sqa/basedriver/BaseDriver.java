@@ -9,8 +9,6 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.WaitUntilState;
 
 public class BaseDriver {
-	public static String url = "https://staging-sp.dev.prep.achievetestprep.com/internal-login";
-
 	public static Playwright playwright;
 	public static BrowserType browserType;
 	public static Browser browser;
@@ -38,7 +36,7 @@ public class BaseDriver {
 		System.out.println("**** Project Browser Name and Version is : " + browserName + " : " + browser.version());
 	}
 
-	public void launchApplication() throws InterruptedException {
+	public void launchApplication(String url) throws InterruptedException {
 		page.navigate(url, new Page.NavigateOptions().setWaitUntil(WaitUntilState.LOAD));
 		Thread.sleep(3000);
 	}
