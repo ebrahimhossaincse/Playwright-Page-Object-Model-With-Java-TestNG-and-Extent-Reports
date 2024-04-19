@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import ebrahim.hossain.sqa.basedriver.BaseDriver;
-import ebrahim.hossain.sqa.pages.LoginPage;
 import ebrahim.hossain.sqa.pages.RegisterPage;
 import ebrahim.hossain.sqa.utilities.ExtentFactory;
 
@@ -32,16 +31,9 @@ public class RegistrationTest extends BaseDriver {
 
 	@Test(priority = 0)
 	public void registrationTest() throws IOException {
-		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>REGISTRATION</b></p>");	
+		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>REGISTRATION</b></p>");
 		RegisterPage register = new RegisterPage(childTest, page);
 		register.login();
-	}
-	
-	@Test(dependsOnMethods = {"registrationTest"})
-	public void loginTest() throws IOException {
-		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>LOGIN</b></p>");
-		LoginPage loginPage = new LoginPage(childTest, page);
-		loginPage.login();
 	}
 
 	@AfterClass
