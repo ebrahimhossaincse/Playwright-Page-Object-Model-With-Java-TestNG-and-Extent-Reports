@@ -106,9 +106,8 @@ public class RegisterPage extends CommonMethods {
 
 	public void login() throws IOException {
 		boolean flag= false;
-		System.out.println(page.title());
 		try {
-			test.info("Login Page");
+			test.info("Registration Page");
 			if (email.isVisible() && flag == false) {
 				test.info("Please Enter your email address");
 				email.fill("atp.dev.adm1n02@gmail.com");
