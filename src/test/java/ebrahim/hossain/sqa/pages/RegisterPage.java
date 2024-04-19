@@ -108,9 +108,15 @@ public class RegisterPage extends CommonMethods {
 					handlePass("You have successfully entered your last name");
 					if (userName.isVisible()) {
 						test.info("Please Enter your User Name");
-						lastName.fill("ebrahim@noemail.com");
+						userName.fill("ebrahim@noemail.com");
 						page.waitForTimeout(1000);
 						handlePass("You have successfully entered your user name");
+						if(password.isVisible()) {
+							test.info("Please Enter your User Name");
+							password.fill("test@123");
+							page.waitForTimeout(1000);
+							handlePass("You have successfully entered your password");
+						}
 					} else {
 						handleFail("User Name was not locateable. Please check the error message",
 								"userName_locator_fail");
