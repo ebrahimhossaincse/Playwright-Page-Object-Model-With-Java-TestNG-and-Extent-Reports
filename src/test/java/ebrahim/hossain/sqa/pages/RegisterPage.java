@@ -5,7 +5,6 @@ import java.nio.file.Paths;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.microsoft.playwright.ElementHandle;
-import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ebrahim.hossain.sqa.utilities.CommonMethods;
 
@@ -108,11 +107,11 @@ public class RegisterPage extends CommonMethods {
 		boolean flag= false;
 		try {
 			test.info("Registration Page");
-			if (email.isVisible() && flag == false) {
-				test.info("Please Enter your email address");
-				email.fill("atp.dev.adm1n02@gmail.com");
+			if (firstName.isVisible() && flag == false) {
+				test.info("Please Enter your First Name");
+				firstName.fill("Md. Ebrahim");
 				page.waitForTimeout(1000);
-				handlePass("You have successfully entered your Email");
+				handlePass("You have successfully entered your first name");
 				flag = true;
 				if (password.isVisible() && flag == true) {
 					test.info("Please Enter your password");
