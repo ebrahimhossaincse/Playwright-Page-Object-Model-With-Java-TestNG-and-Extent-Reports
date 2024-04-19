@@ -116,6 +116,9 @@ public class RegisterPage extends CommonMethods {
 							password.fill("test@123");
 							page.waitForTimeout(1000);
 							handlePass("You have successfully entered your password");
+						}else {
+							handleFail("Password was not locateable. Please check the error message",
+									"password_locator_fail");
 						}
 					} else {
 						handleFail("User Name was not locateable. Please check the error message",
