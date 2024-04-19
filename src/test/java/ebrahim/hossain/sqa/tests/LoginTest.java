@@ -20,7 +20,7 @@ public class LoginTest extends BaseDriver {
 
 	@BeforeClass
 	@Parameters({ "url", "browserName", "headless" })
-	public void openUrl(@Optional("https://staging-sp.dev.prep.achievetestprep.com/internal-login") String url,
+	public void openUrl(@Optional("https://www.tutorialspoint.com/selenium/practice/register.php") String url,
 			@Optional("chrome") String browserName, @Optional("false") String headless) throws InterruptedException {
 		report = ExtentFactory.getInstance();
 		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>SALES PORTAL - ADMIN</b></p>")
