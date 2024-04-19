@@ -74,19 +74,16 @@ public class LoginPage extends CommonMethods {
 	}
 
 	public void login() throws IOException {
-		boolean flag= false;
-		System.out.println(page.title());
 		try {
 			test.info("Login Page");
-			if (email.isVisible() && flag == false) {
+			if (email.isVisible()) {
 				test.info("Please Enter your email address");
-				email.fill("atp.dev.adm1n02@gmail.com");
+				email.fill("");
 				page.waitForTimeout(1000);
 				handlePass("You have successfully entered your Email");
-				flag = true;
-				if (password.isVisible() && flag == true) {
+				if (password.isVisible()) {
 					test.info("Please Enter your password");
-					password.fill("@ATP!tester$001");
+					password.fill("");
 					page.waitForTimeout(1000);
 					handlePass("You have successfully entered your Password");
 				} else {
