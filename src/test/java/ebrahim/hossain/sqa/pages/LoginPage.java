@@ -21,9 +21,9 @@ public class LoginPage extends CommonMethods {
 		this.page = page;
 		this.test = test;
 
-		this.email = page.locator("//input[@name='email']");
-		this.password = page.locator("//input[@name='password']");
-		this.login_button = page.locator("//button[contains(text(),'Login')]");
+		this.email = page.locator("//input[@id='email']");
+		this.password = page.locator("//input[@id='password']");
+		this.login_button = page.locator("//input[@value='Login']");
 	}
 
 	public Locator getEmail() {
