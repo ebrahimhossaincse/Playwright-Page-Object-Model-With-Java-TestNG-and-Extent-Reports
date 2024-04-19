@@ -13,7 +13,7 @@ import ebrahim.hossain.sqa.pages.LoginPage;
 import ebrahim.hossain.sqa.pages.RegisterPage;
 import ebrahim.hossain.sqa.utilities.ExtentFactory;
 
-public class LoginTest extends BaseDriver {
+public class RegistrationTest extends BaseDriver {
 
 	ExtentReports report;
 	ExtentTest parentTest;

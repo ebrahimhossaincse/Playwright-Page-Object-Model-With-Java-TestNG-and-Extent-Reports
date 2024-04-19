@@ -2,12 +2,12 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-19T06:09:47 EDT" name="Default suite" finished-at="2024-04-19T06:10:02 EDT" duration-ms="15453">
+  <suite started-at="2024-04-19T06:14:15 EDT" name="Default suite" finished-at="2024-04-19T06:14:29 EDT" duration-ms="14370">
     <groups>
     </groups>
-    <test started-at="2024-04-19T06:09:47 EDT" name="Default test" finished-at="2024-04-19T06:10:02 EDT" duration-ms="15453">
+    <test started-at="2024-04-19T06:14:15 EDT" name="Default test" finished-at="2024-04-19T06:14:29 EDT" duration-ms="14370">
       <class name="ebrahim.hossain.sqa.tests.LoginTest">
-        <test-method is-config="true" signature="openUrl(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@201a4587]" started-at="2024-04-19T06:09:47 EDT" name="openUrl" finished-at="2024-04-19T06:09:58 EDT" duration-ms="10842" status="PASS">
+        <test-method is-config="true" signature="openUrl(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@201a4587]" started-at="2024-04-19T06:14:15 EDT" name="openUrl" finished-at="2024-04-19T06:14:23 EDT" duration-ms="8220" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,11 +28,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method signature="registrationTest()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@201a4587]" started-at="2024-04-19T06:09:58 EDT" name="registrationTest" finished-at="2024-04-19T06:10:02 EDT" duration-ms="4137" status="PASS">
+        <test-method signature="registrationTest()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@201a4587]" started-at="2024-04-19T06:14:23 EDT" name="registrationTest" finished-at="2024-04-19T06:14:29 EDT" duration-ms="5702" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registrationTest -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@201a4587]" started-at="2024-04-19T06:10:02 EDT" name="afterClass" finished-at="2024-04-19T06:10:02 EDT" duration-ms="442" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@201a4587]" started-at="2024-04-19T06:14:29 EDT" name="afterClass" finished-at="2024-04-19T06:14:29 EDT" duration-ms="418" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
