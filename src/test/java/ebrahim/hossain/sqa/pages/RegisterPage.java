@@ -113,16 +113,16 @@ public class RegisterPage extends CommonMethods {
 				page.waitForTimeout(1000);
 				handlePass("You have successfully entered your first name");
 				flag = true;
-				if (password.isVisible() && flag == true) {
-					test.info("Please Enter your password");
-					password.fill("@ATP!tester$001");
+				if (lastName.isVisible() && flag == true) {
+					test.info("Please Enter your Last Name");
+					password.fill("Hossain");
 					page.waitForTimeout(1000);
 					handlePass("You have successfully entered your Password");
 				} else {
 					handleFail("Password was not locateable. Please check the error message", "password_locator_fail");
 				}
 			} else {
-				handleFail("Email Address was not locateable. Please check the error message.", "email_locator_fail");
+				handleFail("First Name was not locateable. Please check the error message.", "email_locator_fail");
 			}
 		} catch (Exception e) {
 			handleFail("An error occurred during login. Please check the error message.", "login_error");
