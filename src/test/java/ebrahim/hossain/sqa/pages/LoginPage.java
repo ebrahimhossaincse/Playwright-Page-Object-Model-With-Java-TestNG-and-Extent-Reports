@@ -86,6 +86,14 @@ public class LoginPage extends CommonMethods {
 					password.fill("test@123");
 					page.waitForTimeout(1000);
 					handlePass("You have successfully entered your Password");
+					if (login_button.isVisible()) {
+						login_button.click();
+						page.waitForTimeout(1000);
+						handlePass("You have successfully clicked on the Login");
+					} else {
+						handleFail("Login Button was not locateable. Please check the error message",
+								"password_locator_fail");
+					}
 				} else {
 					handleFail("Password was not locateable. Please check the error message", "password_locator_fail");
 				}
