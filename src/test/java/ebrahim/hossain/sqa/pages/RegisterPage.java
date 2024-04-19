@@ -116,6 +116,11 @@ public class RegisterPage extends CommonMethods {
 							password.fill("test@123");
 							page.waitForTimeout(1000);
 							handlePass("You have successfully entered your password");
+							if(register_button.isVisible()) {
+								register_button.click();
+								page.waitForTimeout(1000);
+								handlePass("You have successfully clicked on the Register Button");
+							}
 						}else {
 							handleFail("Password was not locateable. Please check the error message",
 									"password_locator_fail");
