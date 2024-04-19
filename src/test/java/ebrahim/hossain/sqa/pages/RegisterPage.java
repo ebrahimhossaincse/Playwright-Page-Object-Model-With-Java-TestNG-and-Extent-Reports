@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.microsoft.playwright.ElementHandle;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ebrahim.hossain.sqa.utilities.CommonMethods;
 
@@ -13,70 +14,70 @@ public class RegisterPage extends CommonMethods {
 	Page page;
 	ExtentTest test;
 
-	private ElementHandle firstName;
-	private ElementHandle lastName;
-	private ElementHandle userName;
-	private ElementHandle password;
-	private ElementHandle register_button;
-	private ElementHandle backToLogin_button;
-	
+	private Locator firstName;
+	private Locator lastName;
+	private Locator userName;
+	private Locator password;
+	private Locator register_button;
+	private Locator backToLogin_button;
+
 	public RegisterPage(ExtentTest test, Page page) {
 		this.page = page;
 		this.test = test;
-		
-		this.firstName = page.querySelector(".firstname");
-		this.lastName = page.querySelector(".lastname");
-		this.userName = page.querySelector(".username");
-		this.password = page.querySelector(".password");
-		this.register_button = page.querySelector("//input[@type='submit']");
-		this.backToLogin_button = page.querySelector("//a[@type='submit']");
+
+		this.firstName = page.locator("//input[@id='firstname']");
+		this.lastName = page.locator("//input[@id='lastname']");
+		this.userName = page.locator("//input[@id='username']");
+		this.password = page.locator("//input[@id='password']");
+		this.register_button = page.locator("//input[@type='submit']");
+		this.backToLogin_button = page.locator("//a[@type='submit']");
 	}
 
-	public ElementHandle getFirstName() {
+	public Locator getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(ElementHandle firstName) {
+	public void setFirstName(Locator firstName) {
 		this.firstName = firstName;
 	}
 
-	public ElementHandle getLastName() {
+	public Locator getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(ElementHandle lastName) {
+	public void setLastName(Locator lastName) {
 		this.lastName = lastName;
 	}
 
-	public ElementHandle getUserName() {
+	public Locator getUserName() {
 		return userName;
 	}
 
-	public void setUserName(ElementHandle userName) {
+	public void setUserName(Locator userName) {
 		this.userName = userName;
 	}
 
-	public ElementHandle getPassword() {
+	public Locator getPassword() {
 		return password;
 	}
 
-	public void setPassword(ElementHandle password) {
+	public void setPassword(Locator password) {
 		this.password = password;
 	}
 
-	public ElementHandle getRegister_button() {
+	public Locator getRegister_button() {
 		return register_button;
 	}
 
-	public void setRegister_button(ElementHandle register_button) {
+	public void setRegister_button(Locator register_button) {
 		this.register_button = register_button;
 	}
 
-	public ElementHandle getBackToLogin_button() {
+	public Locator getBackToLogin_button() {
 		return backToLogin_button;
 	}
 
-	public void setBackToLogin_button(ElementHandle backToLogin_button) {
+	public void setBackToLogin_button(Locator backToLogin_button) {
 		this.backToLogin_button = backToLogin_button;
 	}
 
@@ -104,7 +105,7 @@ public class RegisterPage extends CommonMethods {
 	}
 
 	public void login() throws IOException {
-		boolean flag= false;
+		boolean flag = false;
 		try {
 			test.info("Registration Page");
 			if (firstName.isVisible() && flag == false) {
@@ -114,10 +115,12 @@ public class RegisterPage extends CommonMethods {
 				handlePass("You have successfully entered your first name");
 				flag = true;
 				if (lastName.isVisible() && flag == true) {
+					flag = false;
 					test.info("Please Enter your Last Name");
-					password.fill("Hossain");
+					lastName.fill("Hossain");
 					page.waitForTimeout(1000);
-					handlePass("You have successfully entered your Password");
+					handlePass("You have successfully entered your last name");
+					flag = true;
 				} else {
 					handleFail("Password was not locateable. Please check the error message", "password_locator_fail");
 				}
