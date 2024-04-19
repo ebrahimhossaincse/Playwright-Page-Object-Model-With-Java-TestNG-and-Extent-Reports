@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ebrahim.hossain.sqa.utilities.CommonMethods;
@@ -19,7 +18,6 @@ public class RegisterPage extends CommonMethods {
 	private Locator userName;
 	private Locator password;
 	private Locator register_button;
-	private Locator backToLogin_button;
 
 	public RegisterPage(ExtentTest test, Page page) {
 		this.page = page;
@@ -30,7 +28,6 @@ public class RegisterPage extends CommonMethods {
 		this.userName = page.locator("//input[@id='username']");
 		this.password = page.locator("//input[@id='password']");
 		this.register_button = page.locator("//input[@type='submit']");
-		this.backToLogin_button = page.locator("//a[@type='submit']");
 	}
 
 	public Locator getFirstName() {
@@ -73,14 +70,6 @@ public class RegisterPage extends CommonMethods {
 		this.register_button = register_button;
 	}
 
-	public Locator getBackToLogin_button() {
-		return backToLogin_button;
-	}
-
-	public void setBackToLogin_button(Locator backToLogin_button) {
-		this.backToLogin_button = backToLogin_button;
-	}
-
 	public void handlePass(String message) {
 		test.pass("<p style=\"color:#85BC63; font-size:13px\"><b>" + message + "</b></p>");
 	}
@@ -105,27 +94,32 @@ public class RegisterPage extends CommonMethods {
 	}
 
 	public void login() throws IOException {
-		boolean flag = false;
 		try {
 			test.info("Registration Page");
-			if (firstName.isVisible() && flag == false) {
+			if (firstName.isVisible()) {
 				test.info("Please Enter your First Name");
 				firstName.fill("Md. Ebrahim");
 				page.waitForTimeout(1000);
 				handlePass("You have successfully entered your first name");
-				flag = true;
-				if (lastName.isVisible() && flag == true) {
-					flag = false;
+				if (lastName.isVisible()) {
 					test.info("Please Enter your Last Name");
 					lastName.fill("Hossain");
 					page.waitForTimeout(1000);
 					handlePass("You have successfully entered your last name");
-					flag = true;
+					if (userName.isVisible()) {
+						test.info("Please Enter your User Name");
+						lastName.fill("ebrahim@noemail.com");
+						page.waitForTimeout(1000);
+						handlePass("You have successfully entered your user name");
+					} else {
+						handleFail("User Name was not locateable. Please check the error message",
+								"userName_locator_fail");
+					}
 				} else {
-					handleFail("Password was not locateable. Please check the error message", "password_locator_fail");
+					handleFail("Last Name was not locateable. Please check the error message", "lastName_locator_fail");
 				}
 			} else {
-				handleFail("First Name was not locateable. Please check the error message.", "email_locator_fail");
+				handleFail("First Name was not locateable. Please check the error message.", "firstName_locator_fail");
 			}
 		} catch (Exception e) {
 			handleFail("An error occurred during login. Please check the error message.", "login_error");
