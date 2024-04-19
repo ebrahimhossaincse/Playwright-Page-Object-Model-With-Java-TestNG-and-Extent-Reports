@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-19T03:06:49 EDT" name="Default suite" finished-at="2024-04-19T03:06:59 EDT" duration-ms="10073">
+  <suite started-at="2024-04-19T03:54:37 EDT" name="Default suite" finished-at="2024-04-19T03:54:50 EDT" duration-ms="12682">
     <groups>
     </groups>
-    <test started-at="2024-04-19T03:06:49 EDT" name="Default test" finished-at="2024-04-19T03:06:59 EDT" duration-ms="10073">
+    <test started-at="2024-04-19T03:54:37 EDT" name="Default test" finished-at="2024-04-19T03:54:50 EDT" duration-ms="12682">
       <class name="ebrahim.hossain.sqa.tests.LoginTest">
-        <test-method is-config="true" signature="openUrl(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@659499f1]" started-at="2024-04-19T03:06:49 EDT" name="openUrl" finished-at="2024-04-19T03:06:58 EDT" duration-ms="9293" status="PASS">
+        <test-method is-config="true" signature="openUrl(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@49049a04]" started-at="2024-04-19T03:54:37 EDT" name="openUrl" finished-at="2024-04-19T03:54:47 EDT" duration-ms="9950" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,11 +28,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method signature="loginTest()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@659499f1]" started-at="2024-04-19T03:06:58 EDT" name="loginTest" finished-at="2024-04-19T03:06:59 EDT" duration-ms="470" status="PASS">
+        <test-method signature="registrationTest()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@49049a04]" started-at="2024-04-19T03:54:47 EDT" name="registrationTest" finished-at="2024-04-19T03:54:49 EDT" duration-ms="2097" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationTest -->
+        <test-method signature="loginTest()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@49049a04]" started-at="2024-04-19T03:54:49 EDT" name="loginTest" finished-at="2024-04-19T03:54:50 EDT" depends-on-methods="ebrahim.hossain.sqa.tests.LoginTest.registrationTest" duration-ms="345" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@659499f1]" started-at="2024-04-19T03:06:59 EDT" name="afterClass" finished-at="2024-04-19T03:06:59 EDT" duration-ms="274" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@49049a04]" started-at="2024-04-19T03:54:50 EDT" name="afterClass" finished-at="2024-04-19T03:54:50 EDT" duration-ms="250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
