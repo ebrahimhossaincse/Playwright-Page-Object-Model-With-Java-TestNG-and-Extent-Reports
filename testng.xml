@@ -1,0 +1,8 @@
+<suite name="Parameterized Suite">
+    <test name="Automation">
+        <classes>
+            <class name="ebrahim.hossain.sqa.tests.RegistrationTest"/>
+            <class name="ebrahim.hossain.sqa.tests.LoginTest"/>
+        </classes>
+    </test>
+</suite>
