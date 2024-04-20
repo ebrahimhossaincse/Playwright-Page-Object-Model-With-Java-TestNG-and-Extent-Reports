@@ -23,7 +23,7 @@ public class RegistrationTest extends BaseDriver {
 	public void openUrl(@Optional("https://www.tutorialspoint.com/selenium/practice/register.php") String url,
 			@Optional("chrome") String browserName, @Optional("false") String headless) throws InterruptedException {
 		report = ExtentFactory.getInstance();
-		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>SALES PORTAL - ADMIN</b></p>")
+		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>REGISTRATION MODULE</b></p>")
 				.assignAuthor("QA TEAM").assignDevice("Windows");
 		launchPlaywright(browserName, headless);
 		launchApplication(url);
