@@ -1,38 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-27T11:41:06 EDT" name="Default suite" finished-at="2024-04-27T11:41:19 EDT" duration-ms="12751">
+  <suite started-at="2024-09-21T16:56:22 EDT" name="Default suite" finished-at="2024-09-21T17:01:10 EDT" duration-ms="287667">
     <groups>
     </groups>
-    <test started-at="2024-04-27T11:41:06 EDT" name="Default test" finished-at="2024-04-27T11:41:19 EDT" duration-ms="12751">
+    <test started-at="2024-09-21T16:56:22 EDT" name="Default test" finished-at="2024-09-21T17:01:10 EDT" duration-ms="287667">
       <class name="ebrahim.hossain.sqa.tests.LoginTest">
-        <test-method is-config="true" signature="openUrl(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@290222c1]" started-at="2024-04-27T11:41:06 EDT" name="openUrl" finished-at="2024-04-27T11:41:18 EDT" duration-ms="11982" status="PASS">
+        <test-method is-config="true" signature="openUrl(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T16:56:22 EDT" name="openUrl" finished-at="2024-09-21T17:00:55 EDT" duration-ms="273253" status="PASS">
           <params>
             <param index="0">
-              <value>
-                <![CDATA[https://www.tutorialspoint.com/selenium/practice/login.php]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[false]]>
-              </value>
+              <value is-null="true"/>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method signature="loginTest()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@290222c1]" started-at="2024-04-27T11:41:18 EDT" name="loginTest" finished-at="2024-04-27T11:41:19 EDT" duration-ms="436" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:00:55 EDT" name="loginTest" finished-at="2024-09-21T17:01:06 EDT" duration-ms="10627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@290222c1]" started-at="2024-04-27T11:41:19 EDT" name="afterClass" finished-at="2024-04-27T11:41:19 EDT" duration-ms="286" status="PASS">
+        <test-method signature="testInvalidUsername()[pri:1, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:06 EDT" name="testInvalidUsername" finished-at="2024-09-21T17:01:06 EDT" duration-ms="281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidUsername -->
+        <test-method signature="testInvalidPassword()[pri:2, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:06 EDT" name="testInvalidPassword" finished-at="2024-09-21T17:01:07 EDT" duration-ms="319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidPassword -->
+        <test-method signature="testEmptyUsernameAndPassword()[pri:3, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:07 EDT" name="testEmptyUsernameAndPassword" finished-at="2024-09-21T17:01:07 EDT" duration-ms="295" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyUsernameAndPassword -->
+        <test-method signature="testEmptyUsername()[pri:4, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:07 EDT" name="testEmptyUsername" finished-at="2024-09-21T17:01:07 EDT" duration-ms="314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyUsername -->
+        <test-method signature="testEmptyPassword()[pri:5, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:07 EDT" name="testEmptyPassword" finished-at="2024-09-21T17:01:08 EDT" duration-ms="298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyPassword -->
+        <test-method signature="testSQLInjection()[pri:6, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:08 EDT" name="testSQLInjection" finished-at="2024-09-21T17:01:08 EDT" duration-ms="314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSQLInjection -->
+        <test-method signature="testSpecialCharactersInPassword()[pri:7, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:08 EDT" name="testSpecialCharactersInPassword" finished-at="2024-09-21T17:01:08 EDT" duration-ms="251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSpecialCharactersInPassword -->
+        <test-method signature="testInvalidUsernameFormat()[pri:8, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:08 EDT" name="testInvalidUsernameFormat" finished-at="2024-09-21T17:01:08 EDT" duration-ms="293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidUsernameFormat -->
+        <test-method signature="testLongUsername()[pri:9, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:08 EDT" name="testLongUsername" finished-at="2024-09-21T17:01:09 EDT" duration-ms="280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLongUsername -->
+        <test-method signature="testLockedAccount()[pri:10, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:09 EDT" name="testLockedAccount" finished-at="2024-09-21T17:01:09 EDT" duration-ms="280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLockedAccount -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:ebrahim.hossain.sqa.tests.LoginTest@2ddc9a9f]" started-at="2024-09-21T17:01:09 EDT" name="afterClass" finished-at="2024-09-21T17:01:10 EDT" duration-ms="784" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

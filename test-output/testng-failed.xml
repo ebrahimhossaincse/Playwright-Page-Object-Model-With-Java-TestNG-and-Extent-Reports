@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
-  <test thread-count="5" name="Automation(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ebrahim.hossain.sqa.tests.RegistrationTest">
-        <methods>
-          <include name="registrationTest"/>
-          <include name="afterClass"/>
-          <include name="openUrl"/>
-        </methods>
-      </class> <!-- ebrahim.hossain.sqa.tests.RegistrationTest -->
       <class name="ebrahim.hossain.sqa.tests.LoginTest">
         <methods>
+          <include name="testLockedAccount"/>
+          <include name="testEmptyUsernameAndPassword"/>
+          <include name="testInvalidPassword"/>
+          <include name="testInvalidUsernameFormat"/>
+          <include name="testEmptyPassword"/>
+          <include name="testSQLInjection"/>
           <include name="openUrl"/>
-          <include name="afterClass"/>
           <include name="loginTest"/>
+          <include name="afterClass"/>
+          <include name="testInvalidUsername"/>
+          <include name="testLongUsername"/>
+          <include name="testEmptyUsername"/>
+          <include name="testSpecialCharactersInPassword"/>
         </methods>
       </class> <!-- ebrahim.hossain.sqa.tests.LoginTest -->
     </classes>
-  </test> <!-- Automation(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

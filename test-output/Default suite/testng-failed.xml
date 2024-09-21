@@ -5,9 +5,19 @@
     <classes>
       <class name="ebrahim.hossain.sqa.tests.LoginTest">
         <methods>
+          <include name="testLockedAccount"/>
+          <include name="testEmptyUsernameAndPassword"/>
+          <include name="testInvalidPassword"/>
+          <include name="testInvalidUsernameFormat"/>
+          <include name="testEmptyPassword"/>
+          <include name="testSQLInjection"/>
           <include name="openUrl"/>
-          <include name="afterClass"/>
           <include name="loginTest"/>
+          <include name="afterClass"/>
+          <include name="testInvalidUsername"/>
+          <include name="testLongUsername"/>
+          <include name="testEmptyUsername"/>
+          <include name="testSpecialCharactersInPassword"/>
         </methods>
       </class> <!-- ebrahim.hossain.sqa.tests.LoginTest -->
     </classes>
