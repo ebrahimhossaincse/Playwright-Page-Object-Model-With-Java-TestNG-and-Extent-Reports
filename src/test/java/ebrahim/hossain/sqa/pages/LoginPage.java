@@ -89,7 +89,7 @@ public class LoginPage extends CommonMethods {
 					if (login_button.isVisible()) {
 						login_button.click();
 						page.waitForTimeout(1000);
-						handlePass("You have successfully clicked on the Login");
+						handlePassWithScreenshot("You have successfully clicked on the Login", "login_pass");
 					} else {
 						handleFail("Login Button was not locateable. Please check the error message",
 								"password_locator_fail");
